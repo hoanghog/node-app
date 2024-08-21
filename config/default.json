@@ -1,0 +1,75 @@
+{
+  "model": {
+    "apiKeys": {
+      "valueLength": 64
+    },
+    "customers": {
+      "oskCustomerCNLength": 64,
+      "code": "^[A-Za-z]{2,16}$",
+      "codeLength": 16
+    },
+    "devices": {
+      "codeLength": 64,
+      "code": "^[A-Za-z0-9_-]{12,64}$"
+    },
+    "measurements": {
+      "codeLength": 128,
+      "code": "^[A-Za-z0-9_-]{12,128}$"
+    },
+    "sites": {
+      "codeLength": 64,
+      "code": "^[A-Za-z0-9_-]{12,64}$",
+      "oskB2BLoginLength": 1024
+    },
+    "pointsOfSupply": {
+      "codeLength": 64,
+      "code": "^[A-Za-z0-9_-]{12,64}$",
+      "vendorCode": "^[A-Za-z0-9_]{2,16}$",
+      "modelCode": "^[A-Za-z0-9_]{2,16}$"
+    },
+    "pointOfSupplyProfiles": {
+      "codeLength": 64,
+      "vendorCode": "^[A-Za-z0-9_]{2,16}$",
+      "modelCode": "^[A-Za-z0-9_]{2,16}$",
+      "code": "^[A-Za-z0-9_-]{12,64}$"
+    },
+    "suburbs": {
+      "codeLength": 16,
+      "code": "^[A-Za-z0-9]{2,16}$"
+    },
+    "sensor": {
+      "codeLength": 64,
+      "code": "^[A-Za-z0-9_-]{12,64}$"
+    }
+  },
+  "enum": {
+    "cities": {
+      "code": ["BB","BS","BJ","BN","BR","BA","BY","CA","DT","DK","DS","GA","GL","HC","HE","IL","KK","KN","KE","KS","KA","KM","LV","LE","LM","LC","MA","MT","ML","MI","MY","NO","NR","NM","NZ","PE","PK","PN","PT","PP","PB","PO","PD","PU","RA","RS","RV","RK","SB","SC","SE","SI","SV","SO","SN","SL","SP","SK","SA","TO","TV","TN","TT","TR","TS","VK","VT","ZM","ZV","ZC","ZH","ZA"]
+    },
+    "pointOfSupplyProfiles": {
+      "type": ["FREEZER", "COOLER", "ELE_METER", "WATER_METER", "GAS_METER", "DESK_SENSOR", "VENUE_DEFAULT"]
+    },
+    "pointOfSupplyProfileMeasurementParameters": {
+      "measurementParamType": ["MIN_ALARM", "MAX_ALARM", "HYS_ALARM", "INITIAL_VALUE", "MIN_VALUE", "MAX_VALUE", "JSON"]
+    },
+    "pointOfSupplyProfileMeasurements": {
+      "measurementType": ["TEMP", "HUM", "AMB_TEMP", "AMB_HUM", "WATER_VOLUME", "TOTAL_ACT_ENRG"]
+    },
+    "sensors": {
+      "connectionType": ["EXTERNAL_WITH_HW_ADDRESS", "EXTERNAL_GENERIC", "INTERNAL"]
+    },
+    "measurements": {
+      "type": ["TEMP", "HUM", "ILUM", "INTERUPT_SEND", "ADC", "INTERUPT_COUNT", "AMB_TEMP", "AMB_HUM", "INTERNAL_VOLT", "INTERNAL_SIGNAL", "SIGNAL", "WATER_VOLUME", "TOTAL_ACT_ENRG"]
+    },
+    "measurementParameters": {
+      "type": ["MIN_ALARM", "MAX_ALARM", "HYS_ALARM", "INITIAL_VALUE", "MIN_VALUE", "MAX_VALUE", "JSON"]
+    },
+    "apiKeys": {
+      "type": ["NIFI_RAW_DATA", "NIFI_PROCESSED_DATA", "NIFI_DEVICE_STATUS", "LO_MANAGEMENT", "IOT_DASHBOARD_CONSUME", "IOT_DOWNLINK", "LO_DATA_READ"]
+    }
+  },
+  "nameLength": 1024,
+  "descriptionLength": 2048,
+  "streamIdLength": 1024,
+  "applicationName": "smartDataMetadataApp"
+}

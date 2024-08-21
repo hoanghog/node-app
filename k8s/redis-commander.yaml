@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-cmd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-cmd
+  template:
+    metadata:
+      labels:
+        app: redis-cmd
+    spec:
+      containers:
+        - name: redis-cmd
+          image: rediscommander/redis-commander:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081 
+          resources: {}
+          env:
+            - name: REDIS_HOSTS
+              value: "redis:redis-service:6379"
+            - name: HTTP_USER
+              value: "default"
+            - name: HTTP_PASSWORD
+              value: "redis-pw"
+
+

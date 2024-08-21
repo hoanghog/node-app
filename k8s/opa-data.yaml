@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opa-data
+data:
+  users.json: |
+    {
+      "users": {
+        "alice": {
+          "roles": ["admin"]
+        },
+        "bob": {
+          "roles": ["user"]
+        }
+      }
+    }

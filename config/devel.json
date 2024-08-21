@@ -1,0 +1,31 @@
+{
+  "db": {
+    "mariaDb": {
+      "uri": "127.0.0.1",
+      "port": "33066"
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": "63379"
+    }
+  },
+  "server": {
+    "port": 3001
+  },
+  "keycloak": {
+    "config": {
+      "resource": "iot_crcm_appData_api",
+      "auth-server-url": "https://idp.orange.test/auth",
+      "realm": "orange-mediation"
+    },
+    "authRoles": {
+      "ro": "metadata_ro",
+      "rw": "metadata_rw"
+    },
+    "authorization": "iot_crcm_metadata_api",
+    "adminRole": "SMART_DATA_SUPER_ADMIN"
+  },
+  "opa": {
+    "url": "http://localhost:8182"
+  }
+}

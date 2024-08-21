@@ -1,0 +1,1 @@
+module.exports = require('@iotosk/eslint_config');

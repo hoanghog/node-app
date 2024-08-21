@@ -1,0 +1,20 @@
+{
+  "db": {
+    "mariaDb": {
+      "user": "mariadb_user",
+      "password": "mariadb_password",
+      "dbName": "mariadb_name",
+      "host": "mariadb_host",
+      "port": "mariadb_port"
+    },
+    "redis": {
+      "host": "redis_host",
+      "port": "redis_port",
+      "password": "redis_pw",
+      "username": "redis_username"
+    }
+  },
+  "session": {
+    "secret": "session_secret"
+  }
+}

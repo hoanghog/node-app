@@ -1,0 +1,16 @@
+{
+  "db": {
+    "mariaDb": {
+      "uri": "35.231.145.39",
+      "port": "3306"
+    }
+  },
+  "server": {
+    "port": 3001
+  },
+  "keycloak": {
+    "clientId": "iot_crcm_metadata_api",
+    "serverUrl": "http://iotosk.ddns.net:54768/auth",
+    "realm": "iot"
+  }
+}
