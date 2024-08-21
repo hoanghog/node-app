@@ -60,15 +60,21 @@ jobs:
           git config --global user.name "GitHub Action"
           git add VERSION
           git commit -m "Bump version to v${NEW_VERSION}"
-          git push
 
-      # Step 9: Build and push the Docker image with the new version tag
+      # Step 9: Push changes using PAT
+      - name: Push changes
+        env:
+          PAT_TOKEN: ${{ secrets.PAT }}
+        run: |
+          git push https://${PAT_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+
+      # Step 10: Build and push the Docker image with the new version tag
       - name: Build and push Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/node-server:v${{ env.NEW_VERSION }} .
           docker push ${{ secrets.DOCKER_USERNAME }}/node-server:v${{ env.NEW_VERSION }}
 
-      # Step 10: Tag the image as latest and push it
+      # Step 11: Tag the image as latest and push it
       - name: Tag the latest image
         run: |
           docker tag ${{ secrets.DOCKER_USERNAME }}/node-server:v${{ env.NEW_VERSION }} ${{ secrets.DOCKER_USERNAME }}/node-server:latest
