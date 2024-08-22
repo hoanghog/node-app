@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: opa-rego
+  name: opa-config
 data:
-  data.rego: |
-    package openpolicyagent-main
+  config.yaml: |
+    services:
+      - name: example
+        url: http://localhost:8181/v1/data
 
-    default allow = false
+    labels:
+      - example
 
-    allow {
-        input.allow = true
-    }
+    decision_logs:
+      console: true

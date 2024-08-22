@@ -21,6 +21,22 @@ spec:
           env:
           - name: redis_host
             value: "redis-service"
+          livenessProbe:
+            httpGet:
+              path: /probes/liveness
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 300
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /probes/readiness
+              port: 80
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 2
           resources: {}
 
 

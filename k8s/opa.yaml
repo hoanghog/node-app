@@ -13,22 +13,11 @@ spec:
         app: opa
     spec:
       containers:
-      - name: opa
-        image: openpolicyagent/opa:latest
-        args:
-        - "run"
-        - "--server"
-        - "--config-file=/config/config.yaml"
-        - "--data-file=/data/users.json"
-        volumeMounts:
-        - mountPath: /config
-          name: opa-config
-        - mountPath: /data
-          name: opa-data
-      volumes:
-      - name: opa-config
-        configMap:
-          name: opa-config
-      - name: opa-data
-        configMap:
-          name: opa-data
+        - name: opa
+          image: openpolicyagent/opa:latest
+          ports:
+            - containerPort: 8181
+          command:
+            - "run"
+            - "--server"
+          resources: {}

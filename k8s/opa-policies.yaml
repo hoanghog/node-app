@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opa-policies
+data:
+  mypolicy.rego: |
+    package example.api
+
+    default allow = false
+
+    allow {
+        input.user == "alice"
+    }
+  mydata.json: |
+    {
+        "users": [
+            {"name": "alice", "role": "admin"},
+            {"name": "bob", "role": "user"}
+        ]
+    }
