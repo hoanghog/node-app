@@ -8,8 +8,6 @@ LABEL maintainer="martinhoangdev@gmail.com" \
 
 # Bundle app source
 COPY . .
-RUN npm install
-RUN npm run build
 
 EXPOSE 3001
 
