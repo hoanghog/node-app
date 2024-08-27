@@ -1,11 +1,7 @@
 {
-  "name": "crcm-metadata-api",
+  "name": "node-app",
   "version": "1.0.0",
   "description": "",
-  "config": {
-    "ocNamespace": "iot-crcm",
-    "ocTokenName": "TOKEN_SMARTDATA"
-  },
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --no-cache --testResultsProcessor jest-sonar-reporter --coverage",
@@ -30,6 +26,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hoanghog/eslint_config": "workspace:*",
     "app-root-path": "3.1.0",
     "axios": "0.26.1",
     "body-parser": "1.20.0",
@@ -109,8 +106,5 @@
     "migrations",
     ".sequelizerc.js",
     "Dockerfile"
-  ],
-  "prisma": {
-    "schema": "./../../../prisma/schema.prisma"
-  }
+  ]
 }
